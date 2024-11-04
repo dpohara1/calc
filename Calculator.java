@@ -106,6 +106,28 @@ public class Calculator {
                     result = calculator.divide(x, y);
                     System.out.println(x + " ÷ " + y + " = " + result);
                     break;
+                case "modulo":
+                    System.out.println("Enter number 1:");
+                    try {
+                        x = scanner.nextInt();
+                    }
+                    catch (Exception e) {
+                        System.out.println("Invalid input!");
+                        scanner.next();
+                        break;
+                    }
+                    System.out.println("Enter number 2:");
+                    try {
+                        y = scanner.nextInt();
+                    }
+                    catch (Exception e) {
+                        System.out.println("Invalid input!");
+                        scanner.next();
+                        break;
+                    }
+                    result = calculator.modulo(x, y);
+                    System.out.println(x + " % " + y + " = " + result);
+                    break;
                 case "sqrt":
                     System.out.println("Enter a number:");
                     try {
@@ -156,6 +178,7 @@ public class Calculator {
         System.out.println("\tsubtract: Subtract two numbers");
         System.out.println("\tmultiply: Multiply two numbers");
         System.out.println("\tdivide: Divide two numbers");
+        System.out.println("\tmodulo: Calculate the remainder of the division of two numbers");
         System.out.println("\tsqrt: Take the square root of a number");
         System.out.println("\tpower: Multiply a number by an exponent");
     }
@@ -174,6 +197,10 @@ public class Calculator {
 
     public double divide(double x, double y) {
         return x / y;
+    }
+
+    public double modulo(double x, double y) {
+        return x % y;
     }
 
     public double squareRoot(double x) {
